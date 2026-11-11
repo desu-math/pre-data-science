@@ -1,10 +1,10 @@
-# Mathematics with Python
+# pre-data-science
 
-> **Learning mathematics by implementing concepts, algorithms, and real-world examples in Python.**
+> **Learning mathematics and statistics by implementing concepts, algorithms, and real-world examples in Python.**
 
 ## About the Repository
 
-**Mathematics with Python** is an educational repository that combines mathematical theory with Python programming. Its purpose is to make mathematical concepts easier to understand by explaining the underlying theory, presenting step-by-step algorithms, and implementing them in Python.
+**pre-data-science** is an educational repository that combines mathematical theory with Python programming. Its purpose is to make mathematical concepts easier to understand by explaining the underlying theory, presenting step-by-step algorithms, and implementing them in Python.
 
 Rather than simply providing code, this repository emphasizes **understanding first, implementation second**. Every topic is designed to help learners see *why* a method works before learning *how* to implement it.
 
