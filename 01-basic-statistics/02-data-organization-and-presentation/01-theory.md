@@ -2,51 +2,28 @@
 
 ## 1. Introduction
 
-Imagine that a researcher collects the monthly income of 100 households in a particular town.
+After collecting data, we often obtain a collection of observations that may appear disorganized and difficult to understand. Before performing statistical analysis, we need to organize and present the data in a meaningful way.
 
-The collected information may look like this:
+For example, suppose we collect the examination scores of 100 students. Looking at all 100 scores individually may not immediately reveal the overall performance of the students. However, arranging the scores into a frequency distribution and presenting them graphically can help us understand the distribution more easily.
 
-```text
-12000, 15000, 10000, 18000, 12000, 20000, 15000,
-10000, 14000, 18000, 12000, 16000, 15000, 20000, ...
-```
+Data organization and presentation are therefore important steps in statistical analysis.
 
-This is called **raw data** because the observations have been collected but have not yet been systematically organized or summarized.
-
-Although the information contains useful facts, understanding its overall pattern may be difficult.
-
-For example:
-
-- How many households earn less than 15,000 Birr?
-- Which income level occurs most frequently?
-- How are the observations distributed?
-- What proportion of households earns between 15,000 and 20,000 Birr?
-
-To answer these questions easily, we need to organize and present the collected data.
-
-**Data organization and presentation** involve arranging raw data systematically and displaying it in a form that makes information easier to understand, compare, and interpret.
-
-This is an important step in statistical analysis and Data Science because meaningful analysis begins with understanding the structure and characteristics of the available data.
-
----
+This part introduces the fundamental methods used to organize, summarize, and present statistical data.
 
 ## 2. Table of Contents
 
 1. [Learning Objectives](#3-learning-objectives)
 2. [Raw Data and Data Organization](#4-raw-data-and-data-organization)
 3. [Frequency Distribution](#5-frequency-distribution)
-4. [Frequency Distribution for Qualitative Data](#6-frequency-distribution-for-qualitative-data)
-5. [Frequency Distribution for Quantitative Discrete Data](#7-frequency-distribution-for-quantitative-discrete-data)
-6. [Frequency Distribution for Quantitative Continuous Data](#8-frequency-distribution-for-quantitative-continuous-data)
-7. [Cumulative and Relative Frequency Distributions](#9-cumulative-and-relative-frequency-distributions)
-8. [Tabular Presentation of Data](#10-tabular-presentation-of-data)
-9. [Graphical Presentation of Data](#11-graphical-presentation-of-data)
-10. [Choosing an Appropriate Presentation Method](#12-choosing-an-appropriate-presentation-method)
-11. [Importance in Data Science](#13-importance-in-data-science)
-12. [Common Mistakes](#14-common-mistakes)
-13. [Formula and Concept Summary](#15-formula-and-concept-summary)
-14. [Practice Questions with Solutions](#16-practice-questions-with-solutions)
-15. [Conclusion](#17-conclusion)
+4. [Grouped Frequency Distribution](#6-grouped-frequency-distribution)
+5. [Relative and Cumulative Frequency](#7-relative-and-cumulative-frequency)
+6. [Tabular Presentation](#8-tabular-presentation)
+7. [Graphical Presentation](#9-graphical-presentation)
+8. [Applications in Data Science](#10-applications-in-data-science)
+9. [Common Mistakes](#11-common-mistakes)
+10. [Formula Summary](#12-formula-summary)
+11. [Practice Questions with Solutions](#13-practice-questions-with-solutions)
+12. [Conclusion](#14-conclusion)
 
 ---
 
@@ -54,1444 +31,950 @@ This is an important step in statistical analysis and Data Science because meani
 
 After studying this part, you should be able to:
 
-- Explain raw data and why data organization is necessary.
-- Arrange raw observations systematically.
-- Explain frequency and frequency distributions.
+- Explain why data organization is necessary in statistical analysis.
+- Arrange raw data systematically.
 - Construct frequency distributions for qualitative and quantitative data.
-- Distinguish between discrete and continuous frequency distributions.
-- Understand class intervals, class limits, class boundaries, class width, and class midpoints.
+- Understand class intervals, class limits, class boundaries, class widths, and class midpoints.
 - Calculate relative and cumulative frequencies.
-- Present data using appropriate statistical tables.
-- Understand bar charts, pie charts, histograms, frequency polygons, and ogives.
-- Distinguish between different graphical presentation methods.
-- Select suitable tables and graphs for different types of data.
+- Present statistical information using appropriate tables.
+- Construct and interpret common statistical graphs.
+- Distinguish between bar charts, histograms, frequency polygons, and ogives.
+- Select appropriate presentation methods depending on the nature of the data and the objective of the analysis.
 
 ---
 
-# 4. Raw Data and Data Organization
+## 4. Raw Data and Data Organization
 
-## 4.1 What Is Raw Data?
+### 4.1 What Is Raw Data?
 
-Raw data is data collected from a statistical investigation before it has been systematically arranged, summarized, or analyzed.
+Raw data refers to data collected from a population or sample before it has been systematically organized or summarized.
 
-For example, suppose a researcher records the number of children in 12 selected households:
+For example, suppose the examination scores of 10 students are:
 
-```text
-2, 3, 1, 2, 4, 2, 3, 1, 2, 5, 3, 2
-```
+45, 60, 55, 70, 45, 80, 65, 55, 90, 60
 
-These observations represent the original collected information.
+These observations represent raw data.
 
-Although the data are available, their pattern is not immediately clear.
+Although the information is available, identifying patterns and understanding the overall distribution may not be easy.
 
-For instance, we may want to know how many households have two children or how many households have more than three children.
+### 4.2 What Is Data Organization?
 
-Organizing the observations helps answer such questions.
+Data organization is the process of arranging collected observations into a systematic form to make them easier to understand, analyze, and interpret.
 
-## 4.2 What Is Data Organization?
+For example, we can arrange the previous scores in ascending order:
 
-Data organization is the process of arranging collected observations systematically so that their characteristics and patterns become easier to understand.
+45, 45, 55, 55, 60, 60, 65, 70, 80, 90
 
-Common data organization techniques include:
+This simple arrangement already makes some features of the data easier to observe.
 
-- Arranging observations in ascending or descending order.
-- Constructing frequency distributions.
-- Grouping observations into class intervals.
-- Presenting information using statistical tables.
+### 4.3 Importance of Data Organization
 
-### Example: Arranging Raw Data
+Data organization helps us to:
 
-Consider the following observations representing the number of children in 12 households:
-
-```text
-2, 3, 1, 2, 4, 2, 3, 1, 2, 5, 3, 2
-```
-
-We can arrange them in ascending order:
-
-```text
-1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 5
-```
-
-This arrangement makes the distribution easier to observe.
-
-We can immediately see that:
-
-- The smallest observation is 1.
-- The largest observation is 5.
-- The value 2 appears frequently.
-- There are no observations equal to 6 or greater.
-
-Arranging data in ascending or descending order is a simple but useful way of organizing raw observations.
-
-## 4.3 Why Is Data Organization Necessary?
-
-Data organization is important because it:
-
-1. Makes large datasets easier to understand.
-2. Helps identify repeated values and patterns.
-3. Makes comparisons easier.
-4. Helps detect unusual or unexpected observations.
-5. Provides a foundation for statistical analysis.
-6. Makes data presentation more effective.
-
-**Important:** Data organization does not necessarily change the information contained in the original observations. It changes how the information is arranged and displayed.
+1. Simplify large collections of observations.
+2. Identify patterns and repeated values.
+3. Understand the distribution of data.
+4. Detect unusual observations and possible errors.
+5. Prepare data for further statistical analysis.
+6. Communicate information more effectively.
 
 ---
 
-# 5. Frequency Distribution
+## 5. Frequency Distribution
 
-## 5.1 What Is Frequency?
+### 5.1 What Is Frequency?
 
-Frequency is the number of times a particular value or category appears in a dataset.
+Frequency refers to the number of times a particular value or category occurs in a dataset.
 
-For example, consider the following observations:
+For example, consider the examination scores:
 
-```text
-2, 3, 1, 2, 4, 2, 3, 1, 2, 5, 3, 2
-```
+40, 50, 40, 60, 50, 40, 70, 60, 50, 40
 
-The value 2 appears five times.
+The value 40 occurs four times. Therefore, its frequency is 4.
 
-Therefore, the frequency of 2 is 5.
+### 5.2 What Is a Frequency Distribution?
 
-Similarly:
+A frequency distribution is a table that organizes data by showing the different values or categories and their corresponding frequencies.
 
-- Frequency of 1 = 2.
-- Frequency of 2 = 5.
-- Frequency of 3 = 3.
-- Frequency of 4 = 1.
-- Frequency of 5 = 1.
+For the previous examination scores:
 
-Frequency tells us how often a particular value or category occurs.
+| Score | Frequency |
+|---|---:|
+| 40 | 4 |
+| 50 | 3 |
+| 60 | 2 |
+| 70 | 1 |
+| **Total** | **10** |
 
-## 5.2 What Is a Frequency Distribution?
+The total frequency must equal the total number of observations.
 
-A **frequency distribution** is a systematic arrangement of data that shows the number of times each value, category, or class interval occurs.
+In this example:
 
-It summarizes raw observations by displaying their corresponding frequencies.
+Total frequency = 4 + 3 + 2 + 1 = 10
 
-Consider the previous example:
+Generally:
 
-| Number of Children | Frequency |
-|---:|---:|
-| 1 | 2 |
-| 2 | 5 |
-| 3 | 3 |
-| 4 | 1 |
-| 5 | 1 |
-| **Total** | **12** |
-
-This table is called a frequency distribution.
-
-Instead of examining all 12 observations individually, we can understand the distribution using only five distinct values and their frequencies.
-
-## 5.3 General Properties of a Frequency Distribution
-
-A frequency distribution should satisfy the following properties:
-
-1. Each observation must be represented.
-2. Every observation should belong to an appropriate value or category.
-3. Frequencies must be non-negative.
-4. The sum of all frequencies must equal the total number of observations.
-
-Mathematically:
-
-**Σf = n**
+Σf = n
 
 Where:
 
-- f = frequency of a value, category, or class.
+- f = frequency of a value or class.
 - n = total number of observations.
-- Σf = sum of all frequencies.
 
-For example, if a dataset contains 12 observations, the sum of its frequencies must be 12.
+### 5.3 Types of Frequency Distributions
 
-This is an important check when constructing frequency distributions.
+Frequency distributions can be constructed for different types of data.
 
-## 5.4 Types of Frequency Distribution
+#### A. Qualitative Frequency Distribution
 
-Frequency distributions can be constructed differently depending on the nature of the data.
+Used when observations belong to categories.
 
-The major forms considered in this part are:
+Example: Preferred learning method among students.
 
-1. Frequency distribution for qualitative data.
-2. Frequency distribution for quantitative discrete data.
-3. Frequency distribution for quantitative continuous data.
-
----
-
-# 6. Frequency Distribution for Qualitative Data
-
-Qualitative data represent categories rather than numerical quantities.
-
-Therefore, a frequency distribution for qualitative data shows the number of observations belonging to each category.
-
-### Example
-
-Suppose a researcher investigates the preferred payment methods of 20 customers.
-
-The collected observations are:
-
-```text
-Cash, Mobile Money, Cash, Bank Transfer, Mobile Money,
-Cash, Mobile Money, Cash, Bank Transfer, Cash,
-Mobile Money, Cash, Bank Transfer, Mobile Money,
-Cash, Cash, Bank Transfer, Mobile Money, Cash,
-Mobile Money
-```
-
-We can organize the observations into the following frequency distribution:
-
-| Payment Method | Frequency |
+| Learning Method | Frequency |
 |---|---:|
-| Cash | 8 |
-| Mobile Money | 7 |
-| Bank Transfer | 5 |
-| **Total** | **20** |
+| Online | 30 |
+| Face-to-face | 45 |
+| Hybrid | 25 |
+| **Total** | **100** |
 
-The table tells us how many customers prefer each payment method.
+Each observation should belong to one appropriate category, and all relevant categories should be represented.
 
-Notice that the categories are not numerical values. We simply count the number of observations in each category.
+#### B. Discrete Quantitative Frequency Distribution
 
-### Important Considerations
+Used when quantitative data consist of distinct countable values.
 
-When constructing a frequency distribution for qualitative data:
-
-- Each category should be clearly identified.
-- Categories should not overlap.
-- Every observation should belong to an appropriate category.
-- The total frequency should equal the total number of observations.
-
-For example, if we classify customers according to their preferred payment method, each customer should be assigned to the appropriate category.
-
----
-
-# 7. Frequency Distribution for Quantitative Discrete Data
-
-Quantitative discrete variables take distinct, countable numerical values.
-
-For discrete data, we can construct a frequency distribution by listing the distinct observed values and counting how frequently each occurs.
-
-### Example
-
-Suppose the number of children in 20 households is recorded as follows:
-
-```text
-0, 1, 2, 2, 3, 1, 2, 4, 0, 3,
-2, 1, 3, 2, 4, 1, 2, 3, 0, 2
-```
-
-We identify the distinct observed values:
-
-```text
-0, 1, 2, 3, 4
-```
-
-Then we count how frequently each value occurs.
+Example: Number of children in 20 households.
 
 | Number of Children | Frequency |
-|---:|---:|
-| 0 | 3 |
-| 1 | 4 |
+|---|---:|
+| 0 | 2 |
+| 1 | 5 |
 | 2 | 7 |
 | 3 | 4 |
 | 4 | 2 |
 | **Total** | **20** |
 
-This frequency distribution shows how the number of children is distributed among the 20 households.
+#### C. Continuous Grouped Frequency Distribution
 
-### Important Considerations
+Used when continuous quantitative data are organized into class intervals.
 
-For discrete quantitative data:
+For example, suppose we collect the examination scores of 40 students.
 
-- List the distinct values.
-- Arrange them in ascending order.
-- Count the number of occurrences of each value.
-- Check that the total frequency equals the number of observations.
+| Score Interval | Frequency |
+|---|---:|
+| 20–29 | 4 |
+| 30–39 | 8 |
+| 40–49 | 12 |
+| 50–59 | 10 |
+| 60–69 | 6 |
+| **Total** | **40** |
 
-For datasets with a small number of distinct values, this method is usually straightforward.
+Instead of displaying every distinct observation, we group the values into intervals.
 
-However, when a quantitative dataset contains many distinct values, listing every value separately may produce a very long table.
-
-In such cases, grouping observations into class intervals can make the distribution easier to understand.
-
-This leads us to grouped frequency distributions.
+This makes large datasets easier to summarize and interpret.
 
 ---
 
-# 8. Frequency Distribution for Quantitative Continuous Data
+## 6. Grouped Frequency Distribution
 
-## 8.1 Why Do We Group Continuous Data?
+When the dataset contains many different numerical values, constructing a separate row for every value may not be convenient.
 
-Consider a researcher who records the heights of 100 students.
+Grouping observations into class intervals provides a more compact representation.
 
-The measurements might be:
+To construct a grouped frequency distribution, we need to understand several important terms.
 
-```text
-150.2, 162.5, 170.1, 155.8, 168.4, 173.2, ...
-```
-
-Since height is a continuous variable, many different values may appear.
-
-Listing every distinct height and its frequency may produce a large table.
-
-Instead, we can group the observations into intervals.
-
-For example:
-
-| Height (cm) | Frequency |
-|---|---:|
-| 150–159 | 15 |
-| 160–169 | 35 |
-| 170–179 | 30 |
-| 180–189 | 20 |
-| **Total** | **100** |
-
-This is called a **grouped frequency distribution**.
-
-It summarizes observations by showing how many values fall within each class interval.
-
-## 8.2 Class Interval
+### 6.1 Class Interval
 
 A class interval is a range of values used to group observations in a frequency distribution.
 
 For example:
 
-```text
-150–159
-160–169
-170–179
-180–189
-```
+20–29, 30–39, 40–49, and 50–59.
 
-Each interval represents a class.
+Each interval represents a particular group of observations.
 
-The frequency of a class is the number of observations belonging to that interval.
+### 6.2 Class Limits
 
-## 8.3 Class Limits
+Class limits are the smallest and largest values that can belong to a class.
 
-Class limits are the smallest and largest stated values of a class interval.
+For the class interval 40–49:
 
-For the interval:
+- Lower class limit = 40
+- Upper class limit = 49
 
-```text
-150–159
-```
+### 6.3 Class Boundaries
 
-- Lower class limit = 150.
-- Upper class limit = 159.
+Class boundaries are the actual endpoints that separate consecutive classes without gaps or overlaps.
 
-The lower class limit is the smallest stated value, while the upper class limit is the largest stated value of that class.
+Suppose examination scores are recorded to the nearest whole number.
 
-## 8.4 Class Boundaries
+Consider:
 
-Class boundaries define the actual continuous limits separating adjacent classes.
+| Class Interval |
+|---|
+| 40–49 |
+| 50–59 |
+| 60–69 |
 
-They are particularly useful when recorded data are rounded to a particular measurement unit.
+The upper limit of the first class is 49, while the lower limit of the second class is 50.
 
-Consider these classes:
+The difference is 1. To remove this gap, we use the midpoint between the two adjacent limits:
 
-```text
-150–159
-160–169
-170–179
-180–189
-```
+(49 + 50)/2 = 49.5
 
-If measurements are recorded to the nearest whole centimetre, their continuous class boundaries are:
+Therefore, the class boundaries become:
 
-```text
-149.5–159.5
-159.5–169.5
-169.5–179.5
-179.5–189.5
-```
+| Class Interval | Lower Boundary | Upper Boundary |
+|---|---:|---:|
+| 40–49 | 39.5 | 49.5 |
+| 50–59 | 49.5 | 59.5 |
+| 60–69 | 59.5 | 69.5 |
 
-Notice that the upper boundary of one class equals the lower boundary of the next class.
+For values recorded to the nearest whole number, we subtract 0.5 from the lower class limit and add 0.5 to the upper class limit.
 
-This ensures that there are no gaps or overlaps between consecutive classes.
+This adjustment depends on the precision at which observations are recorded.
 
-### How Are Class Boundaries Determined?
+### 6.4 Class Width
 
-When consecutive classes are expressed using whole-number limits, the difference between the upper limit of one class and the lower limit of the next class is 1.
+Class width is the difference between the upper and lower class boundaries.
 
-Half of this difference is:
+Formula:
 
-**1 / 2 = 0.5**
-
-Therefore:
-
-- Lower boundary = Lower class limit − 0.5.
-- Upper boundary = Upper class limit + 0.5.
-
-This adjustment is appropriate for the stated whole-number measurement precision.
-
-For measurements recorded to another precision, the boundary adjustment must reflect the actual recording unit.
-
-## 8.5 Class Width
-
-Class width is the difference between the upper and lower class boundaries of a class.
-
-It can also be determined using consecutive lower class limits when the classes have equal widths.
-
-**Class Width = Upper Class Boundary − Lower Class Boundary**
+Class width = Upper class boundary − Lower class boundary
 
 Example:
 
-For the class 150–159, the boundaries are 149.5 and 159.5.
+For the class interval 40–49:
 
-Therefore:
+Class width = 49.5 − 39.5 = 10
 
-Class width = 159.5 − 149.5 = 10.
+For equal-width classes, we can also find the width by subtracting consecutive lower class limits.
 
-Each class has a width of 10 cm.
+For example:
 
-For equal-width classes, the difference between consecutive lower class limits also gives the class width.
+50 − 40 = 10
 
-**Important:** Class width should be distinguished from the difference between the stated upper and lower class limits.
+### 6.5 Class Midpoint
 
-For example, 159 − 150 = 9, but the class width is 10 because the continuous boundaries are 149.5 and 159.5.
+The class midpoint is the central value of a class interval.
 
-## 8.6 Class Midpoint
+It is calculated as the average of the lower and upper class boundaries.
 
-The class midpoint is the value exactly halfway between the lower and upper class boundaries.
+Formula:
 
-It is also called the class mark.
-
-**Class Midpoint = (Lower Class Boundary + Upper Class Boundary) / 2**
+Class midpoint = (Lower boundary + Upper boundary)/2
 
 Example:
 
-For the class 149.5–159.5:
+For the class interval 40–49:
 
-Class midpoint = (149.5 + 159.5) / 2
+Midpoint = (39.5 + 49.5)/2 = 44.5
 
-Class midpoint = 154.5.
+The midpoint represents the center of the class and is useful in constructing frequency polygons and performing certain statistical calculations.
 
-The class midpoint represents the central value of the class.
+### 6.6 Range
 
-It is useful when working with grouped data, especially in later statistical calculations.
+The range measures the difference between the largest and smallest observations.
 
-## 8.7 Number of Classes
+Formula:
 
-When constructing a grouped frequency distribution, we need to decide how many class intervals to use.
+Range = Maximum value − Minimum value
 
-The number of classes depends on:
+Example:
 
-- The total number of observations.
-- The range of the data.
-- The nature of the variable.
-- The level of detail required.
+Suppose the smallest examination score is 20 and the largest is 90.
 
-One commonly used guideline is Sturges' Rule:
+Range = 90 − 20 = 70
 
-**k = 1 + 3.322 log₁₀(n)**
+The range gives us an idea of how widely the observations are spread.
+
+### 6.7 Number of Classes
+
+The number of classes determines how many intervals we use to organize the observations.
+
+One commonly used guideline is Sturges' rule:
+
+k = 1 + 3.322 log₁₀(n)
 
 Where:
 
 - k = approximate number of classes.
-- n = total number of observations.
+- n = number of observations.
 - log₁₀ = logarithm to base 10.
 
-The calculated value is normally rounded to a suitable whole number.
+The result is rounded to a suitable whole number.
 
-This rule provides a guideline rather than a strict requirement. Other choices may be more appropriate depending on the dataset.
+Sturges' rule is a guideline rather than a strict requirement. The researcher may adjust the number of classes depending on the dataset and the purpose of the presentation.
 
-## 8.8 Range of Data
+### 6.8 Approximate Class Width
 
-The range is the difference between the largest and smallest observations.
+After selecting the number of classes, we can estimate the class width.
 
-**Range = Maximum Value − Minimum Value**
+Formula:
+
+Class width ≈ Range / Number of classes
 
 Example:
 
-Suppose the smallest recorded height is 150 cm and the largest is 189 cm.
+Suppose:
 
-Range = 189 − 150 = 39 cm.
+- Range = 80
+- Number of classes = 8
 
-The range helps us understand the spread of the observations and can assist in constructing class intervals.
+Then:
 
-A common approach to choosing an approximate class width is:
+Class width ≈ 80/8 = 10
 
-**Class Width ≈ Range / Number of Classes**
+The width may be adjusted to a convenient value when constructing the final frequency distribution.
 
-The resulting width may be adjusted to a convenient value.
-
-## 8.9 Constructing a Grouped Frequency Distribution
-
-A grouped frequency distribution can be constructed using the following general procedure:
-
-1. Identify the smallest and largest observations.
-2. Calculate the range.
-3. Choose an appropriate number of classes.
-4. Determine a suitable class width.
-5. Construct non-overlapping class intervals.
-6. Identify the class limits and boundaries.
-7. Count the observations belonging to each class.
-8. Check that the sum of frequencies equals the total number of observations.
-
-### Example
-
-Suppose the following table summarizes the heights of 20 students:
-
-| Height (cm) | Frequency |
-|---|---:|
-| 150–159 | 3 |
-| 160–169 | 6 |
-| 170–179 | 7 |
-| 180–189 | 4 |
-| **Total** | **20** |
-
-The corresponding class boundaries and midpoints are:
-
-| Class Limits | Class Boundaries | Midpoint | Frequency |
-|---|---|---:|---:|
-| 150–159 | 149.5–159.5 | 154.5 | 3 |
-| 160–169 | 159.5–169.5 | 164.5 | 6 |
-| 170–179 | 169.5–179.5 | 174.5 | 7 |
-| 180–189 | 179.5–189.5 | 184.5 | 4 |
-| **Total** | | | **20** |
-
-The table provides more information than simply listing the original observations.
-
-It shows the number of students within each height interval.
-
-## 8.10 Important Properties of Class Intervals
+### 6.9 Characteristics of a Good Grouped Frequency Distribution
 
 A good grouped frequency distribution should satisfy the following conditions:
 
-1. **Mutually exclusive classes:** An observation should not belong to two classes simultaneously.
-2. **Exhaustive classes:** Every observation should belong to one of the classes.
-3. **No gaps:** The intervals should cover the relevant range of observations.
-4. **Suitable number of classes:** Too many classes make the table complicated, while too few may hide important patterns.
-5. **Appropriate class width:** Equal widths are often useful, although unequal widths may sometimes be necessary.
+1. Classes should not overlap.
+2. Every observation should belong to an appropriate class.
+3. Class intervals should cover the entire range of observations.
+4. Class widths should be suitable for the dataset.
+5. The number of classes should be reasonable.
+6. Class intervals should be arranged in an understandable order.
 
 ---
 
-# 9. Cumulative and Relative Frequency Distributions
+## 7. Relative and Cumulative Frequency
 
-A frequency distribution can provide more information when we calculate relative and cumulative frequencies.
+Frequency tells us how many observations belong to a particular category or class.
 
-## 9.1 Relative Frequency
+However, sometimes we want to understand the proportion of observations belonging to a category or the number of observations accumulated up to a particular class.
 
-Relative frequency represents the proportion of observations belonging to a particular value, category, or class.
+This leads to relative and cumulative frequencies.
 
-It tells us how large a frequency is relative to the total number of observations.
+### 7.1 Relative Frequency
 
-The formula is:
+Relative frequency represents the proportion of the total observations belonging to a particular value or class.
 
-**Relative Frequency = Class Frequency / Total Frequency**
+Formula:
+
+Relative frequency = Frequency / Total frequency
 
 Or:
 
-**RF = f / n**
+RF = f/n
 
 Where:
 
-- RF = Relative frequency.
-- f = Frequency of a particular class.
-- n = Total number of observations.
+- f = frequency of a particular class.
+- n = total number of observations.
 
-Relative frequency can also be expressed as a percentage:
+Example:
 
-**Percentage Frequency = (f / n) × 100**
-
-### Example
-
-Consider the following grouped frequency distribution:
-
-| Height (cm) | Frequency |
-|---|---:|
-| 150–159 | 3 |
-| 160–169 | 6 |
-| 170–179 | 7 |
-| 180–189 | 4 |
-| **Total** | **20** |
-
-For the class 150–159:
-
-Relative frequency = 3 / 20 = 0.15.
-
-Percentage frequency = 0.15 × 100 = 15%.
-
-We can calculate the relative frequencies of all classes:
-
-| Height (cm) | Frequency | Relative Frequency | Percentage |
-|---|---:|---:|---:|
-| 150–159 | 3 | 0.15 | 15% |
-| 160–169 | 6 | 0.30 | 30% |
-| 170–179 | 7 | 0.35 | 35% |
-| 180–189 | 4 | 0.20 | 20% |
-| **Total** | **20** | **1.00** | **100%** |
-
-### Important Property
-
-The sum of all relative frequencies must equal 1.
-
-**ΣRF = 1**
-
-Similarly, the sum of percentage frequencies must equal 100%.
-
-**ΣPercentage Frequency = 100%**
-
-Relative frequencies are particularly useful when comparing datasets of different sizes.
-
-For example, comparing 20 observations with 200 observations using raw frequencies alone may be misleading. Relative frequencies allow us to compare proportions.
-
-## 9.2 Cumulative Frequency
-
-Cumulative frequency is the running total of frequencies up to and including a particular value or class.
-
-It tells us how many observations are less than or equal to a given value or class boundary.
-
-The cumulative frequency of a class is obtained by adding its frequency to the cumulative frequency of the preceding class.
-
-**Cumulative Frequency = Previous Cumulative Frequency + Current Frequency**
-
-For the first class:
-
-**CF = f**
-
-### Example
-
-Consider the previous height distribution:
-
-| Height (cm) | Frequency |
-|---|---:|
-| 150–159 | 3 |
-| 160–169 | 6 |
-| 170–179 | 7 |
-| 180–189 | 4 |
-| **Total** | **20** |
-
-The cumulative frequencies are:
-
-First class:
-
-CF = 3.
-
-Second class:
-
-CF = 3 + 6 = 9.
-
-Third class:
-
-CF = 9 + 7 = 16.
-
-Fourth class:
-
-CF = 16 + 4 = 20.
-
-Therefore:
-
-| Height (cm) | Frequency | Cumulative Frequency |
-|---|---:|---:|
-| 150–159 | 3 | 3 |
-| 160–169 | 6 | 9 |
-| 170–179 | 7 | 16 |
-| 180–189 | 4 | 20 |
-
-The cumulative frequency of the third class is 16.
-
-This means that 16 students have heights below the upper boundary of that class, assuming the stated class arrangement.
-
-### Important Property
-
-The final cumulative frequency must equal the total number of observations.
-
-**Final CF = n**
-
-## 9.3 Types of Cumulative Frequency
-
-There are two common ways to express cumulative frequency.
-
-### A. Less-Than Cumulative Frequency
-
-Less-than cumulative frequency counts observations up to and including the upper boundary of each class.
-
-For example:
-
-| Height Below Upper Boundary (cm) | Cumulative Frequency |
-|---|---:|
-| 159.5 | 3 |
-| 169.5 | 9 |
-| 179.5 | 16 |
-| 189.5 | 20 |
-
-It answers questions such as:
-
-- How many students have heights below 169.5 cm?
-- How many observations fall below a particular upper class boundary?
-
-### B. More-Than Cumulative Frequency
-
-More-than cumulative frequency counts observations at or above the lower boundary of each class.
-
-For the same data:
-
-| Height at or Above Lower Boundary (cm) | Cumulative Frequency |
-|---|---:|
-| 149.5 | 20 |
-| 159.5 | 17 |
-| 169.5 | 11 |
-| 179.5 | 4 |
-
-For example, 11 students have heights of at least 169.5 cm.
-
-The more-than cumulative frequency decreases as we move through the classes.
-
-## 9.4 Cumulative Relative Frequency
-
-Cumulative relative frequency is the running total of relative frequencies.
-
-It can also be calculated by dividing cumulative frequency by total frequency.
-
-**Cumulative Relative Frequency = Cumulative Frequency / Total Frequency**
-
-Its final value must equal 1, or 100% when expressed as a percentage.
-
-It helps us understand the proportion of observations below or above a particular class boundary.
-
----
-
-# 10. Tabular Presentation of Data
-
-## 10.1 What Is Tabular Presentation?
-
-Tabular presentation is the systematic arrangement of data in rows and columns.
-
-It provides a structured way of displaying information and makes comparison and interpretation easier.
-
-Frequency distribution tables are common examples of tabular presentation.
-
-## 10.2 Components of a Statistical Table
-
-A properly constructed statistical table may contain the following components:
-
-1. **Table Number:** Identifies the table.
-2. **Title:** Describes the information presented.
-3. **Column Headings:** Identify the information contained in each column.
-4. **Row Headings:** Identify the information contained in each row.
-5. **Body:** Contains the actual data.
-6. **Units:** Indicate the measurement units where necessary.
-7. **Source:** Identifies where the data were obtained, when applicable.
-8. **Footnotes:** Provide additional explanations when necessary.
-
-### Example
-
-**Table 1: Distribution of Employees by Department**
-
-| Department | Number of Employees |
-|---|---:|
-| Finance | 25 |
-| Marketing | 20 |
-| Human Resources | 15 |
-| Information Technology | 30 |
-| Operations | 10 |
-| **Total** | **100** |
-
-The table has a clear title, meaningful column headings, organized rows, and a total.
-
-## 10.3 Characteristics of a Good Statistical Table
-
-A good statistical table should:
-
-- Have a clear and meaningful title.
-- Use understandable row and column headings.
-- Include measurement units where necessary.
-- Present information accurately.
-- Avoid unnecessary complexity.
-- Make comparisons easy.
-- Include the data source when appropriate.
-
-The purpose of a statistical table is not merely to display numbers but to communicate information clearly.
-
----
-
-# 11. Graphical Presentation of Data
-
-## 11.1 What Is Graphical Presentation?
-
-Graphical presentation is the representation of data using visual forms such as bars, sectors, lines, and other graphical structures.
-
-Graphs help us identify patterns, compare categories, and understand distributions more easily.
-
-Different types of graphs are appropriate for different types of data.
-
-The main graphical methods introduced in this part are:
-
-1. Bar chart.
-2. Pie chart.
-3. Histogram.
-4. Frequency polygon.
-5. Ogive.
-
-## 11.2 Bar Chart
-
-A **bar chart** is a graphical representation of categorical or discrete data using rectangular bars.
-
-The height or length of each bar represents the frequency or another numerical quantity associated with a category or value.
-
-### Example
-
-Consider the following information about customers' preferred payment methods:
-
-| Payment Method | Frequency |
-|---|---:|
-| Cash | 8 |
-| Mobile Money | 7 |
-| Bank Transfer | 5 |
-
-A bar chart represents the categories along one axis and their corresponding frequencies along the other axis.
-
-### Main Characteristics
-
-- Bars are separated by spaces.
-- Each bar represents a category or distinct value.
-- Bar height or length represents frequency.
-- Bars can be vertical or horizontal.
-- Categories can be arranged in a suitable order.
-
-### When Is a Bar Chart Appropriate?
-
-Bar charts are particularly useful for:
-
-- Nominal data.
-- Ordinal data.
-- Discrete quantitative data.
-
-For example, a business may use a bar chart to compare the number of customers using different payment methods.
-
-## 11.3 Pie Chart
-
-A **pie chart** is a circular graphical representation in which a circle is divided into sectors representing the proportions of different categories.
-
-The entire circle represents the total observations, equivalent to 100%.
-
-Each sector represents the proportion of the total belonging to a particular category.
-
-### Calculating Sector Angles
-
-A complete circle contains 360 degrees.
-
-The angle of each sector is calculated using:
-
-**Sector Angle = (Category Frequency / Total Frequency) × 360°**
-
-Or:
-
-**Sector Angle = Relative Frequency × 360°**
-
-### Example
-
-Suppose 100 customers use the following payment methods:
-
-| Payment Method | Frequency |
-|---|---:|
-| Cash | 50 |
-| Mobile Money | 30 |
-| Bank Transfer | 20 |
-| **Total** | **100** |
-
-For cash:
-
-Sector angle = (50 / 100) × 360°
-
-Sector angle = 180°.
-
-For mobile money:
-
-Sector angle = (30 / 100) × 360°
-
-Sector angle = 108°.
-
-For bank transfer:
-
-Sector angle = (20 / 100) × 360°
-
-Sector angle = 72°.
-
-The three sectors together form the complete circle:
-
-180° + 108° + 72° = 360°.
-
-### Main Characteristics
-
-- Represents parts of a whole.
-- Each sector represents a category.
-- Sector sizes are proportional to category frequencies.
-- All sectors together represent 100% of the observations.
-
-### When Is a Pie Chart Appropriate?
-
-A pie chart is useful when:
-
-- The data represent categories.
-- The objective is to show proportions of a whole.
-- The number of categories is relatively small.
-
-A pie chart becomes difficult to interpret when it contains too many categories or sectors with very similar sizes.
-
-## 11.4 Histogram
-
-A **histogram** is a graphical representation of the frequency distribution of quantitative numerical data using adjacent rectangular bars.
-
-It is commonly used for grouped continuous data.
-
-### Example
-
-Consider the following distribution of students' heights:
-
-| Height (cm) | Frequency |
-|---|---:|
-| 150–159 | 3 |
-| 160–169 | 6 |
-| 170–179 | 7 |
-| 180–189 | 4 |
-
-A histogram displays:
-
-- Class intervals along the horizontal axis.
-- Frequencies along the vertical axis.
-- Adjacent rectangles representing the classes.
-
-### Main Characteristics
-
-- Bars touch each other.
-- Each bar represents a class interval.
-- The horizontal axis represents numerical intervals.
-- The vertical axis represents frequency or frequency density.
-
-When all class widths are equal, the heights of the bars can represent frequencies directly.
-
-When class widths are unequal, frequency density is generally used so that the area of each rectangle remains proportional to the class frequency.
-
-For unequal class widths:
-
-**Frequency Density = Frequency / Class Width**
-
-This distinction is important because the area of a histogram bar, rather than its height alone, must represent the frequency.
-
-### When Is a Histogram Appropriate?
-
-Histograms are particularly useful for:
-
-- Continuous quantitative data.
-- Grouped numerical data.
-- Understanding the shape of a distribution.
-
-They help us see where observations are concentrated and how frequencies vary across numerical intervals.
-
-## 11.5 Difference Between Bar Chart and Histogram
-
-Although bar charts and histograms look similar, they represent different types of data.
-
-| Bar Chart | Histogram |
-|---|---|
-| Commonly represents categorical or discrete data. | Commonly represents continuous quantitative data. |
-| Bars are separated by spaces. | Bars touch each other. |
-| Each bar represents a category or distinct value. | Each bar represents a numerical class interval. |
-| Categories can be rearranged when appropriate. | Numerical intervals follow their natural order. |
-| Bar height or length represents frequency. | Bar area represents frequency. |
-
-**Remember:** A bar chart compares categories, while a histogram displays the distribution of numerical observations across intervals.
-
-## 11.6 Frequency Polygon
-
-A **frequency polygon** is a graphical representation of a frequency distribution obtained by plotting class midpoints against their corresponding frequencies and connecting the plotted points using straight lines.
-
-### How Is It Constructed?
-
-For a grouped frequency distribution:
-
-1. Calculate the midpoint of each class.
-2. Represent class midpoints along the horizontal axis.
-3. Represent frequencies along the vertical axis.
-4. Plot each midpoint against its corresponding frequency.
-5. Connect consecutive points using straight lines.
-
-### Example
-
-Consider:
-
-| Height (cm) | Midpoint | Frequency |
-|---|---:|---:|
-| 150–159 | 154.5 | 3 |
-| 160–169 | 164.5 | 6 |
-| 170–179 | 174.5 | 7 |
-| 180–189 | 184.5 | 4 |
-
-The points are:
-
-- (154.5, 3)
-- (164.5, 6)
-- (174.5, 7)
-- (184.5, 4)
-
-Connecting these points produces a frequency polygon.
-
-To close the polygon, it is common to add zero-frequency points at the midpoints of imaginary classes immediately before and after the actual classes.
-
-### When Is a Frequency Polygon Appropriate?
-
-It is useful for:
-
-- Displaying grouped frequency distributions.
-- Understanding the general shape of a distribution.
-- Comparing two or more frequency distributions on the same graph.
-
-## 11.7 Ogive (Cumulative Frequency Curve)
-
-An **ogive** is a graph representing cumulative frequencies.
-
-It is constructed by plotting cumulative frequency values against appropriate class boundaries.
-
-There are two common types:
-
-### A. Less-Than Ogive
-
-A less-than ogive is constructed using:
-
-- Upper class boundaries along the horizontal axis.
-- Less-than cumulative frequencies along the vertical axis.
-
-The plotted points are connected to form a cumulative frequency curve.
-
-The curve generally increases because cumulative frequency cannot decrease.
-
-### B. More-Than Ogive
-
-A more-than ogive is constructed using:
-
-- Lower class boundaries along the horizontal axis.
-- More-than cumulative frequencies along the vertical axis.
-
-The curve generally decreases because the number of observations at or above successive lower class boundaries becomes smaller.
-
-### When Is an Ogive Appropriate?
-
-Ogives are useful for:
-
-- Understanding cumulative frequency.
-- Identifying the number of observations below or above a specified value.
-- Comparing cumulative distributions.
-
-They are also useful when studying measures of position in later statistical topics.
-
----
-
-# 12. Choosing an Appropriate Presentation Method
-
-Not every presentation method is suitable for every type of data.
-
-The choice depends on the nature of the variable and the purpose of the presentation.
-
-| Data Type or Objective | Suitable Presentation |
-|---|---|
-| Nominal data | Frequency table, bar chart, pie chart |
-| Ordinal data | Frequency table, ordered bar chart |
-| Discrete quantitative data | Frequency table, bar chart |
-| Continuous quantitative data | Grouped frequency table, histogram, frequency polygon |
-| Cumulative distribution | Cumulative frequency table, ogive |
-| Comparison of categories | Bar chart |
-| Proportions of a whole | Pie chart |
-| Shape of a numerical distribution | Histogram, frequency polygon |
-
-A researcher should select a presentation method that communicates the information accurately and clearly.
-
-For example, using a histogram to represent blood groups would be inappropriate because blood groups are categories rather than continuous numerical intervals.
-
-Similarly, a pie chart may be less useful when there are many categories.
-
----
-
-# 13. Importance of Data Organization and Presentation in Data Science
-
-Data organization and presentation are important steps in the Data Science workflow.
-
-Before applying statistical models or machine learning algorithms, data scientists must understand the structure and characteristics of their datasets.
-
-Some important applications include:
-
-### 13.1 Exploratory Data Analysis
-
-Exploratory Data Analysis (EDA) involves examining and understanding datasets using summaries and visualizations.
-
-Frequency tables, histograms, and other graphical methods help identify patterns and possible problems in the data.
-
-### 13.2 Understanding Data Distribution
-
-Histograms and frequency distributions help data scientists understand how numerical observations are distributed.
-
-For example, a data scientist studying customer income can use a histogram to understand where most income observations are concentrated.
-
-### 13.3 Detecting Data Problems
-
-Data organization and visualization can help identify:
-
-- Missing values.
-- Unexpected categories.
-- Unusual observations.
-- Inconsistent data.
-- Possible data entry errors.
-
-### 13.4 Communicating Results
-
-Tables and graphs make analytical findings easier to communicate to decision-makers.
-
-For example, a business analyst can use a bar chart to present the number of customers in different regions.
-
-### 13.5 Supporting Further Analysis
-
-Organized data provide a foundation for later statistical calculations and modeling.
-
-**Important:** Data presentation is not merely about making information attractive. Its main purpose is to communicate the characteristics of data accurately.
-
----
-
-# 14. Common Mistakes
-
-| Common Mistake | Correct Understanding |
-|---|---|
-| Treating raw data as already organized information. | Raw data are observations before systematic arrangement. |
-| Assuming frequency means the value itself. | Frequency is the number of times a value or category occurs. |
-| Forgetting to check total frequency. | The sum of frequencies must equal the number of observations. |
-| Using overlapping class intervals. | Each observation should belong to exactly one class. |
-| Confusing class limits and class boundaries. | Limits are stated class endpoints; boundaries define the continuous class edges. |
-| Confusing class width with the difference between class limits. | Class width is determined by the class boundaries. |
-| Treating relative frequency as a raw count. | Relative frequency is the proportion of observations in a class. |
-| Confusing cumulative frequency with ordinary frequency. | Cumulative frequency is the running total of frequencies. |
-| Using a histogram for categorical data. | Histograms are primarily used for numerical class intervals. |
-| Leaving spaces between histogram bars. | Histogram bars normally touch because the intervals are continuous. |
-| Using a bar chart with adjacent bars without justification. | Bar charts normally have spaces between categories. |
-| Forgetting that a pie chart represents a whole. | All sectors together must represent 100% or 360°. |
-| Using frequency instead of cumulative frequency in an ogive. | An ogive represents cumulative frequencies. |
-
----
-
-# 15. Formula and Concept Summary
-
-## 15.1 Frequency Distribution
-
-**Total Frequency:**
-
-Σf = n
-
-Where:
-- f = Frequency.
-- n = Total number of observations.
-
-## 15.2 Range
-
-Range = Maximum Value − Minimum Value
-
-## 15.3 Number of Classes
-
-Sturges' Rule:
-
-k = 1 + 3.322 log₁₀(n)
-
-## 15.4 Class Width
-
-Class Width = Upper Class Boundary − Lower Class Boundary
-
-For equal-width classes:
-
-Class Width ≈ Range / Number of Classes
-
-## 15.5 Class Midpoint
-
-Class Midpoint = (Lower Class Boundary + Upper Class Boundary) / 2
-
-## 15.6 Relative Frequency
-
-Relative Frequency = f / n
-
-## 15.7 Percentage Frequency
-
-Percentage Frequency = (f / n) × 100
-
-## 15.8 Cumulative Frequency
-
-Current Cumulative Frequency = Previous Cumulative Frequency + Current Frequency
-
-## 15.9 Cumulative Relative Frequency
-
-Cumulative Relative Frequency = Cumulative Frequency / Total Frequency
-
-## 15.10 Pie Chart Sector Angle
-
-Sector Angle = (Category Frequency / Total Frequency) × 360°
-
-## 15.11 Histogram with Unequal Class Widths
-
-Frequency Density = Frequency / Class Width
-
-### Important Properties
-
-- Sum of frequencies = Total number of observations.
-- Sum of relative frequencies = 1.
-- Sum of percentage frequencies = 100%.
-- Final cumulative frequency = Total number of observations.
-- Final cumulative relative frequency = 1.
-- Sum of pie chart sector angles = 360°.
-
----
-
-# 16. Practice Questions with Solutions
-
-These questions test the concepts introduced in Part II. They focus on data organization, frequency distributions, and graphical presentation rather than measures of central tendency or dispersion, which will be studied in later parts.
-
-## Question 1: Raw Data and Organization
-
-A researcher records the number of customers visiting a bank during 10 consecutive days:
-
-```text
-25, 30, 25, 40, 35, 30, 25, 45, 35, 30
-```
-
-a) What is raw data?
-
-b) Arrange the observations in ascending order.
-
-c) Explain why arranging the observations is useful.
-
-**Solution:**
-
-a) Raw data are the original observations before systematic organization.
-
-b)
-
-```text
-25, 25, 25, 30, 30, 30, 35, 35, 40, 45
-```
-
-c) Arranging observations makes repeated values, minimum and maximum observations, and general patterns easier to identify.
-
-## Question 2: Frequency Distribution
-
-Using the observations in Question 1, construct a frequency distribution.
-
-**Solution:**
-
-| Number of Customers | Frequency |
-|---:|---:|
-| 25 | 3 |
-| 30 | 3 |
-| 35 | 2 |
-| 40 | 1 |
-| 45 | 1 |
-| **Total** | **10** |
-
-The sum of frequencies is 10, which equals the number of observations.
-
-## Question 3: Relative Frequency
-
-Using Question 2, calculate the relative frequency and percentage frequency of each value.
-
-**Solution:**
-
-| Customers | Frequency | Relative Frequency | Percentage |
-|---:|---:|---:|---:|
-| 25 | 3 | 0.30 | 30% |
-| 30 | 3 | 0.30 | 30% |
-| 35 | 2 | 0.20 | 20% |
-| 40 | 1 | 0.10 | 10% |
-| 45 | 1 | 0.10 | 10% |
-| **Total** | **10** | **1.00** | **100%** |
-
-## Question 4: Cumulative Frequency
-
-Using the frequency distribution in Question 2, construct a cumulative frequency distribution.
-
-**Solution:**
-
-| Customers | Frequency | Cumulative Frequency |
-|---:|---:|---:|
-| 25 | 3 | 3 |
-| 30 | 3 | 6 |
-| 35 | 2 | 8 |
-| 40 | 1 | 9 |
-| 45 | 1 | 10 |
-
-The final cumulative frequency equals 10, the total number of observations.
-
-## Question 5: Grouped Frequency Distribution
-
-A researcher records the examination scores of students and groups them into the following classes:
+Suppose 40 students are classified according to their examination scores.
 
 | Score | Frequency |
 |---|---:|
-| 40–49 | 4 |
-| 50–59 | 6 |
-| 60–69 | 10 |
-| 70–79 | 7 |
-| 80–89 | 3 |
+| 20–29 | 4 |
+| 30–39 | 8 |
+| 40–49 | 12 |
+| 50–59 | 10 |
+| 60–69 | 6 |
+| **Total** | **40** |
 
-Identify:
+The relative frequency of the class 40–49 is:
 
-a) The number of classes.
+RF = 12/40 = 0.30
 
-b) The total number of observations.
+Therefore, 30% of the students belong to this class.
 
-c) The lower and upper class limits of the third class.
+### 7.2 Percentage Frequency
 
-d) The class boundaries of the third class, assuming scores are recorded to the nearest whole number.
+Percentage frequency expresses relative frequency as a percentage.
 
-e) The class width.
+Formula:
 
-f) The midpoint of the third class.
+Percentage frequency = Relative frequency × 100
 
-**Solution:**
+Or:
 
-a) Number of classes = 5.
+Percentage frequency = (f/n) × 100%
 
-b) Total observations = 4 + 6 + 10 + 7 + 3 = 30.
+For the class 40–49:
 
-c) Third class = 60–69.
+Percentage frequency = (12/40) × 100% = 30%
 
-- Lower class limit = 60.
-- Upper class limit = 69.
+The sum of all relative frequencies must equal 1.
 
-d) Class boundaries = 59.5–69.5.
+The sum of all percentage frequencies must equal 100%.
 
-e) Class width = 69.5 − 59.5 = 10.
+### 7.3 Cumulative Frequency
 
-f) Midpoint = (59.5 + 69.5) / 2 = 64.5.
+Cumulative frequency is the running total of frequencies up to a particular class.
 
-## Question 6: Graph Selection
+It tells us how many observations have accumulated up to that class.
 
-Choose an appropriate graphical presentation method for each situation.
+Consider:
 
-a) Comparing the number of customers using different payment methods.
+| Score | Frequency | Less-than Cumulative Frequency |
+|---|---:|---:|
+| 20–29 | 4 | 4 |
+| 30–39 | 8 | 12 |
+| 40–49 | 12 | 24 |
+| 50–59 | 10 | 34 |
+| 60–69 | 6 | 40 |
 
-b) Presenting the distribution of students' heights.
+The cumulative frequencies are obtained by adding each frequency to the previous cumulative total.
 
-c) Showing the proportion of employees working in different departments.
+For example:
 
-d) Presenting the cumulative frequency of examination scores.
+- First class: 4
+- Second class: 4 + 8 = 12
+- Third class: 12 + 12 = 24
+- Fourth class: 24 + 10 = 34
+- Fifth class: 34 + 6 = 40
 
-**Solution:**
+The final cumulative frequency must equal the total number of observations.
 
-a) Bar chart.
+### 7.4 Less-than Cumulative Frequency
 
-b) Histogram.
+Less-than cumulative frequency gives the number of observations below the upper boundary of a particular class.
 
-c) Pie chart.
+It is calculated by adding frequencies from the first class to the current class.
 
-d) Ogive.
+The less-than cumulative frequency is non-decreasing.
 
-## Question 7: Bar Chart vs. Histogram
+For the previous example:
 
-Explain two differences between a bar chart and a histogram.
-
-**Solution:**
-
-1. Bar charts commonly represent categorical or discrete data, while histograms represent grouped numerical data, especially continuous data.
-2. Bar charts normally have spaces between bars, while histogram bars touch because the intervals are continuous.
-
-## Question 8: Pie Chart
-
-A company has 200 employees distributed among three departments:
-
-| Department | Employees |
+| Upper Class Boundary | Less-than Cumulative Frequency |
 |---|---:|
-| Finance | 50 |
-| Marketing | 70 |
-| Operations | 80 |
+| 29.5 | 4 |
+| 39.5 | 12 |
+| 49.5 | 24 |
+| 59.5 | 34 |
+| 69.5 | 40 |
 
-Calculate the sector angle for each department.
+### 7.5 More-than Cumulative Frequency
 
-**Solution:**
+More-than cumulative frequency gives the number of observations at or above the lower boundary of a particular class.
 
-Finance:
+It is calculated by adding frequencies from the current class to the final class.
 
-(50 / 200) × 360° = 90°.
+For the same example:
 
-Marketing:
-
-(70 / 200) × 360° = 126°.
-
-Operations:
-
-(80 / 200) × 360° = 144°.
-
-Total:
-
-90° + 126° + 144° = 360°.
-
-## Question 9: Understanding Cumulative Frequency
-
-A grouped frequency distribution has the following cumulative frequencies:
-
-| Score | Cumulative Frequency |
+| Lower Class Boundary | More-than Cumulative Frequency |
 |---|---:|
-| Below 50 | 5 |
-| Below 60 | 12 |
-| Below 70 | 22 |
-| Below 80 | 30 |
+| 19.5 | 40 |
+| 29.5 | 36 |
+| 39.5 | 28 |
+| 49.5 | 16 |
+| 59.5 | 6 |
 
-a) How many observations are below 70?
+The more-than cumulative frequency is non-increasing.
 
-b) How many observations are below 80?
+### 7.6 Cumulative Relative Frequency
 
-c) Explain why cumulative frequency cannot decrease as we move through successive upper class boundaries.
+Cumulative relative frequency represents the proportion of observations accumulated up to a particular class.
 
-**Solution:**
+Formula:
 
-a) 22 observations.
+Cumulative relative frequency = Cumulative frequency / Total frequency
 
-b) 30 observations.
-
-c) Because each cumulative frequency includes all observations counted in the preceding classes plus the observations in the current class. Therefore, the running total can only increase or remain unchanged.
-
-## Question 10: Integrated Understanding
-
-A researcher collects the monthly household incomes of 40 households.
-
-a) Explain why the original observations are called raw data.
-
-b) Explain why a frequency distribution may be more useful than listing all 40 observations.
-
-c) If the researcher groups the observations into income intervals, what type of frequency distribution is being constructed?
-
-d) Which graph would be suitable for presenting the grouped income distribution?
-
-e) If the researcher wants to show the percentage of households in each income interval, which frequency measure should be used?
-
-**Solution:**
-
-a) They are raw data because they are the original observations before systematic arrangement.
-
-b) A frequency distribution summarizes repeated values or intervals, making patterns easier to understand.
-
-c) A grouped frequency distribution.
-
-d) A histogram.
-
-e) Relative frequency or percentage frequency.
+The final cumulative relative frequency must equal 1.
 
 ---
 
-# 17. Conclusion
+## 8. Tabular Presentation
 
-Data organization and presentation are essential steps in statistical analysis.
+### 8.1 What Is Tabular Presentation?
 
-Raw observations may contain valuable information, but understanding their characteristics becomes easier when they are systematically arranged and presented.
+Tabular presentation is the method of organizing statistical information into rows and columns.
 
-In this part, we studied:
+Tables allow readers to understand, compare, and interpret information systematically.
 
-- Raw data and data organization.
-- Frequency and frequency distributions.
-- Frequency distributions for qualitative, discrete, and continuous data.
-- Class intervals, limits, boundaries, widths, and midpoints.
-- Relative and cumulative frequencies.
-- Statistical tables.
-- Bar charts, pie charts, histograms, frequency polygons, and ogives.
+### 8.2 Components of a Statistical Table
 
-These concepts provide the foundation for exploring and understanding datasets before applying more advanced statistical techniques.
+A well-constructed statistical table generally contains:
 
-In Data Science, this knowledge is particularly useful during Exploratory Data Analysis (EDA), where we examine datasets to understand their structure, identify patterns, and detect possible problems.
+1. **Table number:** Identifies the table.
+2. **Title:** Describes the information presented.
+3. **Column headings:** Identify the information in each column.
+4. **Row headings:** Identify the categories or groups represented in rows.
+5. **Body:** Contains the actual data.
+6. **Units:** Indicate the measurement units, where necessary.
+7. **Source:** Identifies where the data originated.
+8. **Footnotes:** Provide additional explanations when necessary.
 
-**Remember: Organized data are easier to understand, compare, communicate, and analyze.**
+### 8.3 Characteristics of a Good Statistical Table
+
+A good table should be:
+
+- Clear and understandable.
+- Properly titled.
+- Correctly labeled.
+- Organized systematically.
+- Accurate and consistent.
+- Easy to compare and interpret.
+- Free from unnecessary information.
+
+---
+
+## 9. Graphical Presentation
+
+### 9.1 What Is Graphical Presentation?
+
+Graphical presentation is the use of visual representations to communicate statistical information.
+
+Graphs help us identify patterns, compare groups, understand distributions, and communicate findings effectively.
+
+Different types of data and analytical objectives require different graphical methods.
+
+### 9.2 Bar Chart
+
+A bar chart represents categorical or discrete data using rectangular bars.
+
+The height or length of each bar represents the corresponding frequency or value.
+
+Example:
+
+Suppose students prefer the following learning methods:
+
+| Learning Method | Frequency |
+|---|---:|
+| Online | 30 |
+| Face-to-face | 45 |
+| Hybrid | 25 |
+
+A bar chart can visually compare the number of students preferring each learning method.
+
+**Important characteristics:**
+
+- Bars are separated by spaces.
+- Bar height represents frequency or another measured quantity.
+- Categories are displayed along one axis.
+- Bar charts are useful for comparing categories.
+
+### 9.3 Pie Chart
+
+A pie chart represents the relative proportions of categories within a whole.
+
+The entire circle represents 100% of the observations.
+
+Each category is represented by a sector whose angle depends on its frequency.
+
+Formula:
+
+Sector angle = (Frequency / Total frequency) × 360°
+
+Example:
+
+Suppose 40 students prefer different learning methods:
+
+| Learning Method | Frequency |
+|---|---:|
+| Online | 20 |
+| Face-to-face | 12 |
+| Hybrid | 8 |
+| **Total** | **40** |
+
+For online learning:
+
+Sector angle = (20/40) × 360° = 180°
+
+For face-to-face learning:
+
+Sector angle = (12/40) × 360° = 108°
+
+For hybrid learning:
+
+Sector angle = (8/40) × 360° = 72°
+
+The sum of all sector angles must equal 360°.
+
+Pie charts are useful when the objective is to show how a whole is divided into different categories.
+
+### 9.4 Histogram
+
+A histogram represents the frequency distribution of continuous quantitative data using adjacent rectangles.
+
+The horizontal axis represents class intervals, while the vertical axis represents frequencies or frequency densities.
+
+**Important characteristics:**
+
+- Rectangles are adjacent, without spaces between consecutive classes.
+- The horizontal axis represents numerical intervals.
+- The vertical axis represents frequency or frequency density.
+- The area of each rectangle represents the frequency of the corresponding class.
+
+#### Histogram with Equal Class Widths
+
+When all class intervals have equal widths, frequencies can be represented directly by the heights of the rectangles.
+
+#### Histogram with Unequal Class Widths
+
+When class intervals have unequal widths, using frequencies directly as bar heights can produce misleading comparisons.
+
+Instead, we use frequency density.
+
+Formula:
+
+Frequency density = Frequency / Class width
+
+The area of each rectangle is:
+
+Area = Class width × Frequency density
+
+Therefore:
+
+Area = Frequency
+
+This ensures that the area of each rectangle remains proportional to the number of observations in its class.
+
+**Example:**
+
+Consider:
+
+| Class Interval | Frequency | Class Width | Frequency Density |
+|---|---:|---:|---:|
+| 0–10 | 20 | 10 | 2 |
+| 10–30 | 30 | 20 | 1.5 |
+| 30–60 | 60 | 30 | 2 |
+
+For the first class:
+
+Frequency density = 20/10 = 2
+
+Area = 10 × 2 = 20
+
+For the second class:
+
+Frequency density = 30/20 = 1.5
+
+Area = 20 × 1.5 = 30
+
+For the third class:
+
+Frequency density = 60/30 = 2
+
+Area = 30 × 2 = 60
+
+Notice that the rectangle areas reproduce the original frequencies.
+
+### 9.5 Frequency Polygon
+
+A frequency polygon is a graphical representation of a frequency distribution constructed by plotting class midpoints against their corresponding frequencies and connecting the points with straight lines.
+
+The horizontal axis represents class midpoints, while the vertical axis represents frequencies.
+
+**Construction idea:**
+
+1. Calculate the midpoint of each class.
+2. Place the midpoints along the horizontal axis.
+3. Place the corresponding frequencies along the vertical axis.
+4. Plot the points.
+5. Connect consecutive points using straight lines.
+
+Frequency polygons are useful for:
+
+- Understanding the shape of a frequency distribution.
+- Comparing two or more distributions.
+- Identifying patterns in numerical data.
+
+For unequal class widths, frequency density should be considered when the polygon is intended to represent the histogram's shape.
+
+### 9.6 Ogive (Cumulative Frequency Curve)
+
+An ogive is a graph that represents cumulative frequency.
+
+It is constructed by plotting cumulative frequencies against the corresponding class boundaries.
+
+There are two main types.
+
+#### A. Less-than Ogive
+
+A less-than ogive is constructed by plotting less-than cumulative frequencies against the upper class boundaries.
+
+It increases from left to right because cumulative frequency cannot decrease.
+
+#### B. More-than Ogive
+
+A more-than ogive is constructed by plotting more-than cumulative frequencies against the lower class boundaries.
+
+It decreases from left to right because the number of observations at or above successive lower boundaries cannot increase.
+
+Ogives are useful for:
+
+- Understanding cumulative distributions.
+- Estimating the number of observations below or above a particular value.
+- Comparing cumulative distributions.
+- Finding certain positional measures graphically.
+
+### 9.7 Differences Between Common Graphical Methods
+
+| Graph | Suitable Data | Main Purpose |
+|---|---|---|
+| Bar chart | Qualitative or discrete quantitative | Comparing categories or values |
+| Pie chart | Categorical data | Showing proportions of a whole |
+| Histogram | Continuous quantitative | Understanding the shape of a distribution |
+| Frequency polygon | Quantitative frequency distributions | Understanding and comparing distributions |
+| Ogive | Cumulative frequency distributions | Understanding accumulated frequencies |
+
+### 9.8 Choosing an Appropriate Graph
+
+The appropriate graphical method depends on the nature of the data and the purpose of the analysis.
+
+For example:
+
+- To compare the number of students in different departments, use a bar chart.
+- To show the percentage of students in different departments, use a pie chart.
+- To understand the distribution of examination scores, use a histogram.
+- To compare two examination score distributions, use frequency polygons or comparable histograms.
+- To determine how many students scored below a particular value, use a less-than ogive.
+
+There is no single graph that is appropriate for every statistical situation.
+
+---
+
+## 10. Applications in Data Science
+
+Data organization and presentation are essential in data science because they help transform raw observations into understandable information.
+
+### 10.1 Exploratory Data Analysis
+
+Exploratory Data Analysis (EDA) involves examining datasets to understand their main characteristics before conducting more advanced analysis.
+
+Frequency distributions, tables, histograms, and other graphs are commonly used during this stage.
+
+### 10.2 Understanding Data Distributions
+
+Data visualization helps identify:
+
+- Common values and categories.
+- Concentrations of observations.
+- Variability in the data.
+- Possible unusual observations.
+- Patterns that may require further investigation.
+
+### 10.3 Detecting Data Problems
+
+Organizing and visualizing data can reveal:
+
+- Missing observations.
+- Unexpected values.
+- Incorrect categories.
+- Unusual patterns.
+- Possible data-entry errors.
+
+### 10.4 Communicating Findings
+
+Data scientists often communicate their findings to people who may not have a strong statistical background.
+
+Well-designed tables and graphs make statistical information easier to understand and support better decision-making.
+
+---
+
+## 11. Common Mistakes
+
+1. **Confusing frequency with relative frequency.**
+
+   Frequency counts observations, while relative frequency represents their proportion of the total.
+
+2. **Confusing class limits with class boundaries.**
+
+   Class limits identify the smallest and largest recorded values in a class, while class boundaries define the actual endpoints separating consecutive classes.
+
+3. **Calculating class width incorrectly.**
+
+   Class width is the difference between the upper and lower class boundaries.
+
+4. **Using frequencies directly as histogram heights for unequal class widths.**
+
+   Frequency density should be used so that rectangle areas represent frequencies.
+
+5. **Confusing bar charts with histograms.**
+
+   Bar charts have spaces between bars, while histogram rectangles are adjacent because they represent continuous numerical intervals.
+
+6. **Calculating cumulative frequency incorrectly.**
+
+   Cumulative frequency is a running total, not simply the frequency of the current class.
+
+7. **Confusing less-than and more-than cumulative frequencies.**
+
+   Less-than cumulative frequency increases, while more-than cumulative frequency decreases.
+
+8. **Using a graph without considering the data type.**
+
+   The graphical method should be selected according to the nature of the data and the purpose of the analysis.
+
+9. **Ignoring table labels and units.**
+
+   Tables should clearly communicate what their values represent.
+
+---
+
+## 12. Formula Summary
+
+| Concept | Formula |
+|---|---|
+| Total frequency | n = Σf |
+| Range | Maximum − Minimum |
+| Number of classes (Sturges' rule) | k = 1 + 3.322 log₁₀(n) |
+| Approximate class width | Range / Number of classes |
+| Class width | Upper boundary − Lower boundary |
+| Class midpoint | (Lower boundary + Upper boundary) / 2 |
+| Relative frequency | f/n |
+| Percentage frequency | (f/n) × 100% |
+| Cumulative relative frequency | Cumulative frequency / n |
+| Frequency density | Frequency / Class width |
+| Histogram rectangle area | Class width × Frequency density |
+| Pie chart sector angle | (f/n) × 360° |
+
+---
+
+## 13. Practice Questions with Solutions
+
+### Question 1: Frequency Distribution
+
+The examination scores of 10 students are:
+
+40, 50, 40, 60, 50, 40, 70, 60, 50, 40.
+
+Construct a frequency distribution.
+
+**Solution:**
+
+| Score | Frequency |
+|---|---:|
+| 40 | 4 |
+| 50 | 3 |
+| 60 | 2 |
+| 70 | 1 |
+| **Total** | **10** |
+
+### Question 2: Class Boundaries
+
+Examination scores are recorded to the nearest whole number.
+
+Determine the class boundaries of the interval 50–59.
+
+**Solution:**
+
+Lower boundary = 50 − 0.5 = 49.5
+
+Upper boundary = 59 + 0.5 = 59.5
+
+Therefore, the class boundaries are 49.5 and 59.5.
+
+### Question 3: Class Midpoint and Width
+
+For the class interval 40–49, determine its class midpoint and width.
+
+**Solution:**
+
+Class boundaries:
+
+39.5 and 49.5
+
+Class midpoint:
+
+(39.5 + 49.5)/2 = 44.5
+
+Class width:
+
+49.5 − 39.5 = 10
+
+### Question 4: Relative Frequency
+
+A class contains 15 observations out of a total of 60 observations.
+
+Calculate its relative and percentage frequencies.
+
+**Solution:**
+
+Relative frequency = 15/60 = 0.25
+
+Percentage frequency = 0.25 × 100% = 25%
+
+### Question 5: Cumulative Frequency
+
+Consider:
+
+| Class | Frequency |
+|---|---:|
+| 10–19 | 5 |
+| 20–29 | 8 |
+| 30–39 | 12 |
+| 40–49 | 5 |
+
+Construct the less-than cumulative frequency distribution.
+
+**Solution:**
+
+| Class | Frequency | Cumulative Frequency |
+|---|---:|---:|
+| 10–19 | 5 | 5 |
+| 20–29 | 8 | 13 |
+| 30–39 | 12 | 25 |
+| 40–49 | 5 | 30 |
+
+The final cumulative frequency is 30, equal to the total number of observations.
+
+### Question 6: Histogram Frequency Density
+
+Consider:
+
+| Class Interval | Frequency |
+|---|---:|
+| 0–10 | 20 |
+| 10–30 | 30 |
+| 30–60 | 60 |
+
+Calculate the frequency density of each class.
+
+**Solution:**
+
+First class:
+
+20/10 = 2
+
+Second class:
+
+30/20 = 1.5
+
+Third class:
+
+60/30 = 2
+
+The frequency densities are 2, 1.5, and 2, respectively.
+
+### Question 7: Choosing a Graph
+
+A researcher wants to show the number of students belonging to different departments.
+
+Which graph is most appropriate?
+
+**Solution:**
+
+A bar chart is appropriate because department membership is categorical data, and the objective is to compare the number of students in each category.
+
+### Question 8: Cumulative Distribution
+
+A researcher wants to determine how many households earn less than a specified income level.
+
+Which graphical method is appropriate?
+
+**Solution:**
+
+A less-than ogive is appropriate because it represents cumulative frequency against upper class boundaries.
+
+---
+
+## 14. Conclusion
+
+Data organization and presentation transform raw observations into meaningful statistical information.
+
+Frequency distributions help summarize data, relative frequencies describe proportions, and cumulative frequencies show how observations accumulate across classes.
+
+Tables and graphs provide effective ways to communicate statistical information. Selecting the appropriate presentation method depends on the type of data and the objective of the analysis.
+
+These concepts form an important foundation for further statistical topics, including measures of central tendency, measures of dispersion, and exploratory data analysis.
+
+Understanding how to organize and present data is also an essential skill for anyone preparing to work in data science.
