@@ -1,5 +1,5 @@
 # Part III: Measures of Central Tendency
-
+---
 ## 1. Introduction
 
 **How can we represent a large collection of observations using one meaningful value?**
@@ -20,6 +20,7 @@ The three most commonly used measures are:
 
 Each measure describes the center of a dataset in a different way. Understanding their differences helps us select the most appropriate measure for a particular statistical problem.
 
+---
 ## 2. Table of Contents
 
 - [3. Learning Objectives](#3-learning-objectives)
@@ -45,6 +46,7 @@ Each measure describes the center of a dataset in a different way. Understanding
 - [13. Practice Questions](#13-practice-questions)
 - [14. Conclusion](#14-conclusion)
 
+---
 ## 3. Learning Objectives
 
 After studying this part, you should be able to:
@@ -58,6 +60,7 @@ After studying this part, you should be able to:
 - Select an appropriate measure of central tendency for a given dataset.
 - Understand how these measures are applied in data science.
 
+---
 ## 4. Arithmetic Mean
 
 ### 4.1 Definition
@@ -293,6 +296,7 @@ This means that the mean is the value around which the total squared deviations 
 
 This property is particularly important in statistics and data science, where squared errors are frequently used.
 
+---
 ## 5. Weighted Arithmetic Mean
 
 ### 5.1 Definition
@@ -348,6 +352,7 @@ Examples include:
 - Calculating portfolio returns when investments have different proportions.
 - Calculating overall performance scores using different assessment weights.
 
+---
 ## 6. Median
 
 ### 6.1 Definition
@@ -512,6 +517,7 @@ Therefore, the estimated median is **33.25**.
 - It can be used for ordinal and quantitative data.
 - It is particularly useful when a dataset contains extreme observations or is highly skewed.
 
+---
 ## 7. Mode
 
 ### 7.1 Definition
@@ -612,6 +618,7 @@ Therefore, the estimated mode is **34.5**.
 
 **Important:** The modal class is the class interval with the highest frequency, whereas the grouped mode formula estimates the most common value within that class.
 
+---
 ## 8. Relationship Between Mean, Median, and Mode
 
 Mean, median, and mode describe the center of a dataset from different perspectives.
@@ -654,6 +661,7 @@ Mode ≈ 3(Median) − 2(Mean)
 
 This relationship is an approximation, not an exact mathematical identity. It should not be treated as universally valid.
 
+---
 ## 9. Choosing an Appropriate Measure
 
 The three measures are not interchangeable in every situation. Selecting an appropriate measure depends on the type of data and the purpose of the analysis.
@@ -687,6 +695,7 @@ However, if the objective is to calculate the total salary expenditure per emplo
 
 **The key lesson:** The appropriate measure depends not only on the dataset but also on the question we want to answer.
 
+---
 ## 10. Applications in Data Science
 
 Measures of central tendency are important in data analysis because they summarize large datasets into understandable values.
@@ -722,6 +731,7 @@ However, replacing missing values with a central measure is not always appropria
 
 Businesses can use average purchase amounts and the most common product categories to understand customer behavior.
 
+---
 ## 11. Common Mistakes
 
 1. **Calculating the median without arranging the observations.**  
@@ -748,6 +758,7 @@ Businesses can use average purchase amounts and the most common product categori
 8. **Choosing a measure without considering the objective of the analysis.**  
    A mathematically correct measure may still be unsuitable for the question being investigated.
 
+---
 ## 12. Formula Summary
 
 | Measure | Formula |
@@ -764,6 +775,7 @@ Businesses can use average purchase amounts and the most common product categori
 | Grouped Mode | L + [(f₁ − f₀) / (2f₁ − f₀ − f₂)] × h |
 | Empirical Relationship | Mode ≈ 3(Median) − 2(Mean) |
 
+---
 ## 13. Practice Questions
 
 ### Part A: Conceptual Questions
@@ -917,6 +929,7 @@ Mode < Median < Mean
 
 This is the typical ordering associated with a positively skewed distribution. However, the ordering of grouped estimates alone does not establish the exact shape of a distribution.
 
+---
 ## 14. Conclusion
 
 Measures of central tendency help us summarize datasets using representative values.
